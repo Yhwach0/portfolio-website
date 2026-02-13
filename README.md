@@ -1,204 +1,169 @@
-# Portfolio Website
+# 🚀 Personal Portfolio Website
 
-A modern, responsive single-page portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+A modern, responsive portfolio website built with Next.js and TypeScript to showcase projects, skills, and professional development journey.
 
-## 🚀 Features
+## 🛠️ Tech Stack
 
-- **Modern Tech Stack**: Next.js 14 with App Router, TypeScript, Tailwind CSS
-- **Dark/Light Mode**: Smooth theme switching with system preference detection
-- **Smooth Animations**: Framer Motion animations throughout the site
-- **Responsive Design**: Mobile-first approach with animated hamburger menu
-- **Accessibility**: Keyboard support, ARIA labels, and semantic HTML
-- **Contact Form**: Functional contact form with validation
-- **Back to Top**: Smooth scroll-to-top button
-- **SEO Optimized**: Meta tags and structured data
+### Frontend
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Smooth animations and interactions
+- **next-themes** - Dark/light mode theming
+- **React Hook Form** - Form validation and management
 
-## 📁 Project Structure
+### Development Tools
+- **ESLint** - Code linting and formatting
+- **PostCSS** - CSS processing
+- **VS Code** - Recommended development environment
+
+## ✨ Features
+
+### 🎨 Design & UX
+- **Fully Responsive** - Optimized for desktop, tablet, and mobile
+- **Dark/Light Mode** - Seamless theme switching with system preference detection
+- **Smooth Animations** - Micro-interactions using Framer Motion
+- **Modern UI** - Clean, professional design with attention to detail
+
+### 📱 Sections
+- **Hero Section** - Eye-catching introduction with social links
+- **About Me** - Professional background and expertise
+- **Skills** - Interactive skill cards with categorization
+- **Projects** - Featured projects with live demos and code links
+- **Contact** - Direct contact information and social profiles
+- **Footer** - Additional navigation and branding
+
+### 🔧 Technical Features
+- **Component-Based Architecture** - Scalable and maintainable code structure
+- **Type Safety** - Full TypeScript implementation
+- **Performance Optimized** - Fast loading and smooth interactions
+- **SEO Friendly** - Proper meta tags and semantic HTML
+- **Accessibility** - WCAG compliant design patterns
+
+## � Project Structure
 
 ```
-src/
-├── app/                    # Next.js App Router
-│   ├── globals.css        # Global styles and Tailwind
-│   ├── layout.tsx         # Root layout with theme provider
-│   └── page.tsx           # Home page
-├── components/            # Reusable components
-│   ├── back-to-top.tsx    # Scroll to top button
-│   ├── footer.tsx         # Footer component
-│   ├── navbar.tsx         # Navigation bar
-│   ├── theme-provider.tsx # Theme context provider
-│   └── theme-toggle.tsx   # Dark/light mode toggle
-├── components/sections/   # Page sections
-│   ├── about.tsx          # About section
-│   ├── contact.tsx        # Contact form
-│   ├── hero.tsx           # Hero section
-│   ├── skills.tsx         # Skills section
-│   └── work.tsx           # Projects section
-└── content/
-    └── profile.ts         # Your profile configuration
+portfolio-website/
+├── src/
+│   ├── app/                    # Next.js App Router pages
+│   │   ├── projects/           # Project-specific pages
+│   │   ├── layout.tsx          # Root layout component
+│   │   ├── page.tsx            # Home page
+│   │   └── globals.css         # Global styles
+│   ├── components/             # Reusable UI components
+│   │   ├── sections/           # Page sections (Hero, About, etc.)
+│   │   ├── navbar.tsx          # Navigation component
+│   │   ├── footer.tsx          # Footer component
+│   │   └── theme-toggle.tsx    # Theme switcher
+│   └── content/                # Static content and data
+│       └── profile.ts          # Profile information
+├── public/                     # Static assets
+├── .vscode/                    # VS Code configuration
+├── tailwind.config.ts          # Tailwind CSS configuration
+├── next.config.js              # Next.js configuration
+└── README.md                   # This file
 ```
-
-## 🛠️ Customization
-
-### Editing Your Profile
-
-All your personal information, skills, projects, and social links are stored in `src/content/profile.ts`. Simply edit this file to customize your portfolio:
-
-```typescript
-export const profile = {
-  name: "Your Name",
-  title: "Your Title",
-  description: "Your description",
-  about: "Your about text",
-  email: "your.email@example.com",
-  location: "Your Location",
-  
-  skills: [
-    { name: "Skill Name", level: 90, category: "frontend" },
-    // Add more skills...
-  ],
-
-  projects: [
-    {
-      id: 1,
-      title: "Project Title",
-      description: "Project description",
-      tech: ["Tech1", "Tech2"],
-      demoUrl: "https://demo-url.com",
-      githubUrl: "https://github.com/username/repo",
-      featured: true,
-    },
-    // Add more projects...
-  ],
-
-  socials: [
-    { name: "GitHub", url: "https://github.com/username", icon: "Github" },
-    // Add more social links...
-  ],
-}
-```
-
-### Adding New Projects
-
-1. Open `src/content/profile.ts`
-2. Add a new project object to the `projects` array
-3. Set `featured: true` for projects you want highlighted
-4. Update the `demoUrl` and `githubUrl` links
-
-### Customizing Skills
-
-Skills are automatically categorized by the `category` field:
-- `frontend`: Skills will appear in the Frontend section
-- `backend`: Skills will appear in the Backend section
-
-The `level` is a percentage (0-100) that controls the progress bar animation.
-
-### Styling
-
-The site uses Tailwind CSS with custom color variables. You can customize colors by modifying:
-- `tailwind.config.ts` for theme configuration
-- `src/app/globals.css` for custom CSS variables and utilities
 
 ## 🚀 Getting Started
 
-1. **Install dependencies**:
+### Prerequisites
+- Node.js 18+ 
+- npm, yarn, or pnpm
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Kairox065/portfolio-website.git
+   cd portfolio-website
+   ```
+
+2. **Install dependencies**
    ```bash
    npm install
+   # or
+   yarn install
+   # or
+   pnpm install
    ```
 
-2. **Run the development server**:
+3. **Run the development server**
    ```bash
    npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
    ```
 
-3. **Open your browser** and navigate to `http://localhost:3000`
+### 🏗️ Build for Production
 
-## 📦 Available Scripts
+```bash
+npm run build
+npm start
+```
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+## 🎯 Customization Guide
+
+### Personal Information
+Edit `src/content/profile.ts` to update:
+- Name, title, and description
+- Email and contact information
+- Skills and expertise levels
+- Projects and their details
+- Social media links
+
+### Styling
+- **Colors**: Modify `tailwind.config.ts` and CSS variables in `src/app/globals.css`
+- **Fonts**: Update font imports in `src/app/layout.tsx`
+- **Animations**: Adjust Framer Motion settings in component files
+
+### Adding New Projects
+1. Update the `projects` array in `src/content/profile.ts`
+2. Set `featured: true` for main projects
+3. Provide demo URLs and GitHub links
+4. Add relevant technologies
 
 ## 🌐 Deployment
 
-### Deploy to Vercel (Recommended)
+### Vercel (Recommended)
+```bash
+npm install -g vercel
+vercel
+```
 
-1. **Push your code to GitHub**:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/portfolio.git
-   git push -u origin main
-   ```
 
-2. **Deploy to Vercel**:
-   - Go to [vercel.com](https://vercel.com)
-   - Click "New Project"
-   - Import your GitHub repository
-   - Vercel will automatically detect the Next.js configuration
-   - Click "Deploy"
+## 🧩 Key Components
 
-Your portfolio will be live at a `.vercel.app` domain. You can:
-- Add a custom domain in Vercel settings
-- Enable automatic deployments on git push
-- Configure environment variables if needed
+### Theme System
+- Automatic system preference detection
+- Manual toggle with smooth transitions
+- Persistent theme selection
 
-### Other Deployment Options
+### Project Cards
+- Gradient backgrounds with hover effects
+- Expandable technology tags
+- Internal and external navigation
 
-The site works on any platform that supports Next.js:
-- **Netlify**: Connect your GitHub repository
-- **Railway**: Deploy with the Next.js template
-- **DigitalOcean App Platform**: Use the Next.js builder
-- **AWS Amplify**: Connect your GitHub repo
-
-## 🎨 Customization Tips
-
-### Colors
-
-The primary gradient colors are defined throughout the components. To change the theme:
-1. Update the gradient classes in components (e.g., `from-blue-500 to-purple-600`)
-2. Or modify the CSS variables in `globals.css`
-
-### Fonts
-
-The site uses Inter font by default. To change fonts:
-1. Import your preferred font in `layout.tsx`
-2. Update the `fontFamily` in `tailwind.config.ts`
-
-### Animations
-
-Animations are powered by Framer Motion. You can:
-- Adjust animation durations in component variants
-- Modify easing functions for different effects
-- Add new animations following the existing pattern
-
-## 📱 Mobile Optimization
-
-The site is fully responsive with:
-- Animated hamburger menu for mobile navigation
-- Touch-friendly buttons and links
-- Optimized spacing for smaller screens
-- Proper viewport meta tags
-
-## ♿ Accessibility Features
-
-- Semantic HTML5 structure
-- ARIA labels on interactive elements
-- Keyboard navigation support
-- Focus indicators for better visibility
-- Screen reader friendly content
-- Reduced motion support for users who prefer it
+### Skill Display
+- Categorized frontend/backend skills
+- Interactive pill-shaped cards
+- Color-coded hover states
 
 ## 🤝 Contributing
 
-Feel free to submit issues and enhancement requests!
+This is a personal portfolio, but feel free to:
+- Report issues or bugs
+- Suggest improvements
+- Fork for your own portfolio
 
-## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+## 🙏 Acknowledgments
+
+- Built with modern web technologies
+- Inspired by clean design principles
+- Optimized for performance and accessibility
 
 ---
 
-**Built with ❤️ using Next.js & Tailwind CSS**
+**📧 Contact**: [Your Email](mailto:anasebraheem03@gmail.com)  
