@@ -64,75 +64,6 @@ portfolio-website/
 └── README.md                   # This file
 ```
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ 
-- npm, yarn, or pnpm
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Kairox065/portfolio-website.git
-   cd portfolio-website
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
-
-3. **Run the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   ```
-
-### 🏗️ Build for Production
-
-```bash
-npm run build
-npm start
-```
-
-## 🎯 Customization Guide
-
-### Personal Information
-Edit `src/content/profile.ts` to update:
-- Name, title, and description
-- Email and contact information
-- Skills and expertise levels
-- Projects and their details
-- Social media links
-
-### Styling
-- **Colors**: Modify `tailwind.config.ts` and CSS variables in `src/app/globals.css`
-- **Fonts**: Update font imports in `src/app/layout.tsx`
-- **Animations**: Adjust Framer Motion settings in component files
-
-### Adding New Projects
-1. Update the `projects` array in `src/content/profile.ts`
-2. Set `featured: true` for main projects
-3. Provide demo URLs and GitHub links
-4. Add relevant technologies
-
-## 🌐 Deployment
-
-### Vercel (Recommended)
-```bash
-npm install -g vercel
-vercel
-```
-
-
 ## 🧩 Key Components
 
 ### Theme System
@@ -166,4 +97,4 @@ This is a personal portfolio, but feel free to:
 
 ---
 
-**📧 Contact**: [Your Email](mailto:anasebraheem03@gmail.com)  
+**📧 Contact**: [Email Me](mailto:anasebraheem03@gmail.com)  
