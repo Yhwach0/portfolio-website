@@ -72,39 +72,40 @@ export default function PasswordGenerator() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="w-full max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10 md:mb-12"
         >
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0 mb-4 sm:mb-6">
             <motion.a
               href="/"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center space-x-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-sm sm:text-base"
             >
               <ArrowLeft className="h-4 w-4" />
-              <span>Return to Main Page</span>
+              <span className="hidden sm:inline">Return to Main Page</span>
+              <span className="sm:hidden">Back</span>
             </motion.a>
             <ThemeToggle />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-2">
             Password Generator
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 px-4">
             Create strong, secure passwords with customizable options
           </p>
-          <div className="mt-4 space-y-2">
-            <div className="flex items-center justify-center text-sm text-gray-500 dark:text-gray-400">
+          <div className="mt-4 sm:mt-6 space-y-2 px-4">
+            <div className="flex items-center justify-center text-xs sm:text-sm text-gray-500 dark:text-gray-400">
               <span className="text-green-500 mr-2">✅</span>
-              Generated locally in your browser
+              <span className="text-center">Generated locally in your browser</span>
             </div>
-            <div className="flex items-center justify-center text-sm text-gray-500 dark:text-gray-400">
+            <div className="flex items-center justify-center text-xs sm:text-sm text-gray-500 dark:text-gray-400">
               <span className="text-green-500 mr-2">✅</span>
-              No passwords are stored or sent anywhere
+              <span className="text-center">No passwords are stored or sent anywhere</span>
             </div>
           </div>
         </motion.div>
@@ -114,16 +115,16 @@ export default function PasswordGenerator() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-8"
+          className="mb-6 sm:mb-8"
         >
-          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
-            <div className="flex items-start space-x-3">
-              <AlertTriangle className="h-5 w-5 text-yellow-600 dark:text-yellow-400 mt-0.5 flex-shrink-0" />
-              <div>
-                <h3 className="text-sm font-semibold text-yellow-800 dark:text-yellow-300 mb-1">
+          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-3 sm:p-4">
+            <div className="flex items-start space-x-2 sm:space-x-3">
+              <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-600 dark:text-yellow-400 mt-0.5 flex-shrink-0" />
+              <div className="flex-1 min-w-0">
+                <h3 className="text-xs sm:text-sm font-semibold text-yellow-800 dark:text-yellow-300 mb-1">
                   ⚠️ Demo Warning
                 </h3>
-                <p className="text-sm text-yellow-700 dark:text-yellow-200">
+                <p className="text-xs sm:text-sm text-yellow-700 dark:text-yellow-200 leading-relaxed">
                   This is a demonstration version only. <strong>DO NOT use this for real passwords.</strong> 
                   The original project was a private local Chrome extension that runs entirely on your device 
                   for maximum security. This web demo is for educational purposes only.
@@ -137,38 +138,38 @@ export default function PasswordGenerator() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
+          className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 md:p-8"
         >
           {/* Password Display */}
-          <div className="mb-8">
-            <div className="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-              <Key className="h-6 w-6 text-blue-500" />
+          <div className="mb-6 sm:mb-8">
+            <div className="flex items-center space-x-2 sm:space-x-4 p-3 sm:p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+              <Key className="h-5 w-5 sm:h-6 sm:w-6 text-blue-500 flex-shrink-0" />
               <input
                 type="text"
                 value={password}
                 readOnly
                 placeholder="Click generate to create a password"
-                className="flex-1 bg-transparent text-gray-900 dark:text-white placeholder-gray-500 outline-none"
+                className="flex-1 bg-transparent text-gray-900 dark:text-white placeholder-gray-500 outline-none text-sm sm:text-base min-w-0"
               />
               <button
                 onClick={copyToClipboard}
                 disabled={!password || password === "Please select at least one option"}
-                className="p-2 text-gray-500 hover:text-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="p-2 sm:p-2.5 text-gray-500 hover:text-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
               >
                 {copied ? (
-                  <Shield className="h-5 w-5 text-green-500" />
+                  <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-green-500" />
                 ) : (
-                  <Copy className="h-5 w-5" />
+                  <Copy className="h-4 w-4 sm:h-5 sm:w-5" />
                 )}
               </button>
             </div>
             {password && password !== "Please select at least one option" && (
-              <div className="mt-4">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">
+              <div className="mt-3 sm:mt-4">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0 mb-2">
+                  <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     Password Strength: {getStrengthText()}
                   </span>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                  <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     {getPasswordStrength()}%
                   </span>
                 </div>
@@ -183,10 +184,10 @@ export default function PasswordGenerator() {
           </div>
 
           {/* Options */}
-          <div className="space-y-6 mb-8">
+          <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
             {/* Length Slider */}
             <div>
-              <div className="flex justify-between items-center mb-2">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0 mb-2">
                 <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Password Length
                 </label>
@@ -205,42 +206,42 @@ export default function PasswordGenerator() {
             </div>
 
             {/* Checkboxes */}
-            <div className="space-y-3">
-              <label className="flex items-center space-x-3 cursor-pointer">
+            <div className="space-y-2 sm:space-y-3">
+              <label className="flex items-start sm:items-center space-x-3 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={includeUppercase}
                   onChange={(e) => setIncludeUppercase(e.target.checked)}
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mt-0.5 sm:mt-0 flex-shrink-0"
                 />
-                <span className="text-gray-700 dark:text-gray-300">Include Uppercase Letters (A-Z)</span>
+                <span className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Include Uppercase Letters (A-Z)</span>
               </label>
-              <label className="flex items-center space-x-3 cursor-pointer">
+              <label className="flex items-start sm:items-center space-x-3 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={includeLowercase}
                   onChange={(e) => setIncludeLowercase(e.target.checked)}
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mt-0.5 sm:mt-0 flex-shrink-0"
                 />
-                <span className="text-gray-700 dark:text-gray-300">Include Lowercase Letters (a-z)</span>
+                <span className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Include Lowercase Letters (a-z)</span>
               </label>
-              <label className="flex items-center space-x-3 cursor-pointer">
+              <label className="flex items-start sm:items-center space-x-3 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={includeNumbers}
                   onChange={(e) => setIncludeNumbers(e.target.checked)}
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mt-0.5 sm:mt-0 flex-shrink-0"
                 />
-                <span className="text-gray-700 dark:text-gray-300">Include Numbers (0-9)</span>
+                <span className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Include Numbers (0-9)</span>
               </label>
-              <label className="flex items-center space-x-3 cursor-pointer">
+              <label className="flex items-start sm:items-center space-x-3 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={includeSymbols}
                   onChange={(e) => setIncludeSymbols(e.target.checked)}
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mt-0.5 sm:mt-0 flex-shrink-0"
                 />
-                <span className="text-gray-700 dark:text-gray-300">Include Symbols (!@#$%^&*)</span>
+                <span className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Include Symbols (!@#$%^&*)</span>
               </label>
             </div>
           </div>
@@ -250,9 +251,9 @@ export default function PasswordGenerator() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={generatePassword}
-            className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 flex items-center justify-center space-x-2"
+            className="w-full py-3 sm:py-4 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base"
           >
-            <RefreshCw className="h-5 w-5" />
+            <RefreshCw className="h-4 w-4 sm:h-5 sm:w-5" />
             <span>Generate Password</span>
           </motion.button>
         </motion.div>
@@ -262,12 +263,12 @@ export default function PasswordGenerator() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6"
+          className="mt-6 sm:mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 sm:p-6"
         >
-          <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-3">
+          <h3 className="text-base sm:text-lg font-semibold text-blue-900 dark:text-blue-300 mb-3">
             🔒 Security Tips
           </h3>
-          <ul className="space-y-2 text-blue-800 dark:text-blue-200">
+          <ul className="space-y-1.5 sm:space-y-2 text-blue-800 dark:text-blue-200 text-sm sm:text-base">
             <li>• Use at least 16 characters for maximum security</li>
             <li>• Include a mix of uppercase, lowercase, numbers, and symbols</li>
             <li>• Avoid using personal information or common words</li>

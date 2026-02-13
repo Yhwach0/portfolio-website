@@ -43,18 +43,18 @@ export function Work() {
   }
 
   return (
-    <section id="work" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="work" className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4"
           >
             Featured Projects
           </motion.h2>
@@ -70,40 +70,40 @@ export function Work() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
-          className="grid md:grid-cols-2 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16"
         >
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-800 rounded-lg sm:rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative">
+              <div className="h-40 sm:h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-white opacity-50">
+                  <span className="text-2xl sm:text-3xl font-bold text-white opacity-50">
                     {project.title[0]}
                   </span>
                 </div>
               </div>
-              <div className="p-6 space-y-4">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+              <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium"
+                      className="px-2 sm:px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-4 pt-4">
+                <div className="flex space-x-3 sm:space-x-4 pt-3 sm:pt-4">
                   <motion.a
                     href={project.demoUrl}
                     onClick={(e) => {
@@ -112,7 +112,7 @@ export function Work() {
                     }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-colors"
+                    className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-colors text-sm sm:text-base"
                   >
                     <Github className="h-4 w-4" />
                     <span>{project.title === "Personal Portfolio Website" ? "View Code" : "Live Demo"}</span>
