@@ -45,7 +45,7 @@ export const profile = {
   ],
 
   socials: [
-    { name: "GitHub", url: "https://github.com/Kairox065", icon: "Github" },
+    { name: "GitHub", url: "https://github.com/Yhwach0", icon: "Github" },
     { name: "Email", url: "mailto:yhwachbusiness0@gmail.com", icon: "Mail" },
   ],
 }
